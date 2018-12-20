@@ -6,7 +6,7 @@ React Based Log Browser for WinstonJs
 
 ## Instalation
 
-`npm install --save winston-dashboard`
+`npm install --save winston-dashboard-lambda`
 Minimum requirement: Node 8
 
 ## Usage
@@ -54,8 +54,11 @@ Server provides query api for these transports.
 ## Make Contribution
 
 `npm i concurrently --save-dev`
+
 `npm build`
+
 `npm login`
+
 `npm publish`
 
 ### Note

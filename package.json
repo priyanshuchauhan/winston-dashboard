@@ -1,11 +1,10 @@
 {
   "name": "winston-dashboard-lambda",
-  "version": "1.0.14",
+  "version": "1.0.16",
   "description": "React Based Log Browser",
   "main": "src/index.js",
   "scripts": {
-    "dev":
-      "cd src/front-end && parcel index.html --public-url /",
+    "dev": "cd src/front-end && parcel index.html --public-url /",
     "build": "cd src/front-end && parcel build index.html --public-url /",
     "publish": "npm run build",
     "test": "./"
@@ -31,11 +30,17 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "cssnano": "^4.1.7",
     "moment": "^2.21.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "sass": "^1.15.2"
   },
   "peerDependencies": {
     "winston": "^2.4.1"
   },
-  "files": ["src/**/*.js", "src/**/*.css", "src/**/*.html"]
+  "files": [
+    "src/**/*.js",
+    "src/**/*.css",
+    "src/**/*.html"
+  ]
 }
