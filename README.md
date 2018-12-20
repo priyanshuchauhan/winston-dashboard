@@ -7,6 +7,7 @@ React Based Log Browser for WinstonJs
 ## Instalation
 
 `npm install --save winston-dashboard`
+Minimum requirement: Node 8
 
 ## Usage
 
@@ -18,7 +19,7 @@ const path = require('path');
 winstonServer({
   path: path.join(__dirname, '/logs'), //Root path of the logs (used to not show the full path on the log selector)
   logFiles: '/**/*.log', //Glob to search for logs, make sure you start with a '/'
-  port: 8000 // Optional custom port, defaults to 8000,
+  port: 8000, // Optional custom port, defaults to 8000,
   orderBy: 'creationTime' // 'creationTime' | 'modifiedTime', if none is provided then it will sort by alphabetical order
 });
 ```
@@ -29,6 +30,7 @@ It uses options.path and options.logFiles to look for all logs.
 Each one of these logs is instantiated as a Transport.
 
 Server provides query api for these transports.
+
 
 ## What you can do
 
@@ -48,3 +50,14 @@ Server provides query api for these transports.
 ## Roadmap
 
 * Add a refresh button
+
+## Make Contribution
+
+`npm i concurrently --save-dev`
+`npm build`
+`npm login`
+`npm publish`
+
+### Note
+In node js software folder, node-sass\4.5.0 folder is still created in npm-cache folder. So I download win32-x64-48_binding.node manually, put it in C:\Users\Administrator\AppData\Roaming\npm-cache\node-sass\4.5.0 folder.
+And run npm install command, issue resolved.

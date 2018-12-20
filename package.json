@@ -1,11 +1,11 @@
 {
-  "name": "winston-dashboard",
-  "version": "1.0.12",
+  "name": "winston-dashboard-lambda",
+  "version": "1.0.14",
   "description": "React Based Log Browser",
   "main": "src/index.js",
   "scripts": {
     "dev":
-      "concurrently \"nodemon test.js\" \"cd src/front-end && parcel index.html --public-url /\"",
+      "cd src/front-end && parcel index.html --public-url /",
     "build": "cd src/front-end && parcel build index.html --public-url /",
     "publish": "npm run build",
     "test": "./"
@@ -32,7 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "moment": "^2.21.0",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.11.0"
   },
   "peerDependencies": {
     "winston": "^2.4.1"

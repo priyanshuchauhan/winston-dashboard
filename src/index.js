@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+let app;
 
 module.exports = config => {
   if (config.path == null) {
@@ -11,6 +11,11 @@ module.exports = config => {
       'Please provide a logFiles property to look for the logs. remember this is a Glob.'
     );
   }
+  if (config.express == null) {
+    app = express();
+  } else {
+    app = config.app;
+  }
   const port = config.port || 8000;
 
   app.use('/api', require('./router/api')(config));
@@ -18,5 +23,9 @@ module.exports = config => {
 
   app.use(require('./errorHandler'));
 
-  app.listen(port, () => console.log(`listening to port ${port}`));
+  if (config.skipListenOnPort) {
+    // Example AWS Lambda
+  } else {
+    app.listen(port, () => console.log(`listening to port ${port}`));
+  }
 };
