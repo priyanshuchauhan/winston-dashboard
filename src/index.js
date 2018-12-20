@@ -11,21 +11,26 @@ module.exports = config => {
       'Please provide a logFiles property to look for the logs. remember this is a Glob.'
     );
   }
+
+  const port = config.port || 8000;
   if (config.express == null) {
     app = express();
   } else {
-    app = config.app;
+    app = config.express;
   }
-  const port = config.port || 8000;
 
   app.use('/api', require('./router/api')(config));
-  app.use('/', require('./router/app'));
+  
+  if (config.rootRoute == null) {
+    app.use('/', require('./router/app'));
+  } else {
+    app.use(config.rootRoute, require('./router/app'));
+  }
 
   app.use(require('./errorHandler'));
 
-  if (config.skipListenOnPort) {
-    // Example AWS Lambda
-  } else {
+  if (config.express == null) {
+    // Example AWS Lambda then do nothing
     app.listen(port, () => console.log(`listening to port ${port}`));
   }
 };

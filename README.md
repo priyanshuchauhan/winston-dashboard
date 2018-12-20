@@ -64,3 +64,11 @@ Server provides query api for these transports.
 ### Note
 In node js software folder, node-sass\4.5.0 folder is still created in npm-cache folder. So I download win32-x64-48_binding.node manually, put it in C:\Users\Administrator\AppData\Roaming\npm-cache\node-sass\4.5.0 folder.
 And run npm install command, issue resolved.
+
+## Delete from NPM
+
+npm deprecate package-name 'reason message'
+
+npm owner add npm package-name
+
+npm owner rm $(npm whoami) package-name
